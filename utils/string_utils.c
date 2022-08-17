@@ -3,15 +3,15 @@
 
 char* str_pad(char string[], int length, char pad_string[], int pad_type)
 {
-	int extra_chars;
-	int string_length = strlen(string);
-	char buffer[20];
+    int extra_chars;
+    int string_length = strlen(string);
+    char buffer[20];
 
-	if (string_length > length) {
-		return string;
-	}
+    if (string_length > length) {
+        return string;
+    }
 
-	extra_chars = length - string_length;
+    extra_chars = length - string_length;
 
     switch (pad_type)
     {
@@ -20,7 +20,7 @@ char* str_pad(char string[], int length, char pad_string[], int pad_type)
                 strcat(string, pad_string);
             }
             break;
-        
+
         case STR_PAD_LEFT:
             strcpy(buffer, string);
 
@@ -39,5 +39,5 @@ char* str_pad(char string[], int length, char pad_string[], int pad_type)
             break;
     }
 
-	return string;
+    return string;
 }
