@@ -1,18 +1,18 @@
 #include <stdio.h>
 #include <string.h>
 #include "utils/string_utils.h"
+#include "datetime/date.h"
 
 #define SPACE_BETWEEN 2
 
-int is_leap_year(int year);
-int get_days_for_year(int year);
 void xprint(char* x, int times);
+void print_month_name(int month);
 
 int main()
 {
     const int PRIMER_DIA_DC = 6; // saturday
 
-    int january_first_day, days_per_month, month, date, year;
+    int january_first_day, _days_per_month, month, date, year;
 
     printf("Type a year: ");
     scanf("%d", &year);
@@ -21,62 +21,13 @@ int main()
 
     // first day for the selected year
     for (int k = 1; k < year; k++) {
-        january_first_day = (january_first_day + get_days_for_year(k) ) % 7;
+        january_first_day = (january_first_day + days_for_year(k) ) % 7;
     }
 
-    for (month = 1; month <= 12; month++)
+    for (month = JANUARY; month <= DECEMBER; month++)
     {
-        switch (month)
-        {
-            case 1:
-                printf("\nJanuary\n");
-                days_per_month = 31;
-                break;
-            case 2:
-                printf("\n\n\nFebruary\n");
-                days_per_month = month % 4 == 0 && month % 100 != 0 ? 28 : 29;
-                break;
-            case 3:
-                printf("\n\n\nMarch\n");
-                days_per_month = 31;
-                break;
-            case 4:
-                printf("\n\n\nApril\n");
-                days_per_month = 30;
-                break;
-            case 5:
-                printf("\n\n\nMay\n");
-                days_per_month = 31;
-                break;
-            case 6:
-                printf("\n\n\nJune\n");
-                days_per_month = 30;
-                break;
-            case 7:
-                printf("\n\n\nJuly\n");
-                days_per_month = 31;
-                break;
-            case 8:
-                printf("\n\n\nAugust\n");
-                days_per_month = 31;
-                break;
-            case 9:
-                printf("\n\n\nSeptember\n");
-                days_per_month = 30;
-                break;
-            case 10:
-                printf("\n\n\nOctober\n");
-                days_per_month = 31;
-                break;
-            case 11:
-                printf("\n\n\nNovember\n");
-                days_per_month = 30;
-                break;
-            case 12:
-                printf("\n\n\nDecember\n");
-                days_per_month = 31;
-                break;
-        }
+        print_month_name(month);
+        _days_per_month = days_per_month(month);
 
         printf("\nMon  Tue  Wed  Thr  Fri  Sat  Sun\n");
         printf("---  ---  ---  ---  ---  ---  ---\n");
@@ -85,7 +36,7 @@ int main()
             printf(" ");
         }
 
-        for (date = 1; date <= days_per_month; date++) {
+        for (date = 1; date <= _days_per_month; date++) {
             int day_block_lenght = 3;
             char day_text[3];
             sprintf(day_text, "%d", date);
@@ -98,7 +49,7 @@ int main()
                 printf("\n");
         }
 
-        january_first_day = (january_first_day + days_per_month) % 7;
+        january_first_day = (january_first_day + _days_per_month) % 7;
     }
 
     printf("\n");
@@ -106,14 +57,47 @@ int main()
     return 0;
 }
 
-int is_leap_year(int year)
+void print_month_name(int month)
 {
-    return year % 4 == 0 && year % 100 != 0;
-}
-
-int get_days_for_year(int year)
-{
-    return is_leap_year(year) ? 366 : 365;
+    switch (month)
+    {
+        case JANUARY:
+            printf("\nJanuary\n");
+            break;
+        case FEBRUARY:
+            printf("\n\n\nFebruary\n");
+            break;
+        case MARCH:
+            printf("\n\n\nMarch\n");
+            break;
+        case APRIL:
+            printf("\n\n\nApril\n");
+            break;
+        case MAY:
+            printf("\n\n\nMay\n");
+            break;
+        case JUNE:
+            printf("\n\n\nJune\n");
+            break;
+        case JULY:
+            printf("\n\n\nJuly\n");
+            break;
+        case AUGUST:
+            printf("\n\n\nAugust\n");
+            break;
+        case SEPTEMBER:
+            printf("\n\n\nSeptember\n");
+            break;
+        case OCTOBER:
+            printf("\n\n\nOctober\n");
+            break;
+        case NOVEMBER:
+            printf("\n\n\nNovember\n");
+            break;
+        case DECEMBER:
+            printf("\n\n\nDecember\n");
+            break;
+    }
 }
 
 void xprint(char* x, int times)
