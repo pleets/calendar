@@ -8,7 +8,7 @@ This is a simple calendar app in C.
 make
 ```
 
-# Compilation
+# Execution
 
 ```bash
 ./calendar
