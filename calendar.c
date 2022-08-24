@@ -3,9 +3,6 @@
 #include "utils/string_utils.h"
 #include "datetime/date.h"
 
-#define SPACE_BETWEEN 2
-
-void xprint(char* x, int times);
 void print_month_name(int month);
 
 int main()
@@ -44,7 +41,7 @@ int main()
             printf("%s", day_text);
 
             if ( (date + january_first_day - 1) % 7 > 0 )
-                xprint(" ", SPACE_BETWEEN);
+                printf("%2s", " ");
             else
                 printf("\n");
         }
@@ -97,12 +94,5 @@ void print_month_name(int month)
         case DECEMBER:
             printf("\n\n\nDecember\n");
             break;
-    }
-}
-
-void xprint(char* x, int times)
-{
-    for (int i = 0; i < times; i++) {
-        printf("%s", x);
     }
 }
