@@ -10,14 +10,14 @@ void print_month_name(int month);
 
 int main()
 {
-    const int PRIMER_DIA_DC = 6; // saturday
+    const int FIRST_AD_DAY = 6; // saturday
 
     int january_first_day, _days_per_month, month, date, year;
 
     printf("Type a year: ");
     scanf("%d", &year);
 
-    january_first_day = PRIMER_DIA_DC;
+    january_first_day = FIRST_AD_DAY;
 
     // first day for the selected year
     for (int k = 1; k < year; k++) {
