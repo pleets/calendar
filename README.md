@@ -15,3 +15,9 @@ make
 ```bash
 ./calendar
 ```
+
+## Command line arguments
+
+```bash
+--colors            shows output with colors
+```
