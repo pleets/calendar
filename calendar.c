@@ -50,8 +50,8 @@ void print_month_calendar(int year, int month, int day)
 {
     print_month_name(month);
 
-    printf_color("\nMon  Tue  Wed  Thr  Fri  Sat  Sun\n", base_bg_color);
-    printf("---  ---  ---  ---  ---  ---  ---\n");
+    printf_color("\nMon  Tue  Wed  Thr  Fri  Sat  Sun", base_bg_color);
+    printf("\n---  ---  ---  ---  ---  ---  ---\n");
 
     int first_month_day = FIRST_AD_DAY;
 
