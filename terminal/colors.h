@@ -1,0 +1,21 @@
+// foreground colors
+#define COLOR_BLACK "\x1b[30m"
+#define COLOR_RED "\x1b[31m"
+#define COLOR_GREEN "\x1b[32m"
+#define COLOR_YELLOW "\x1b[33m"
+#define COLOR_BLUE "\x1b[34m"
+#define COLOR_MAGENTA "\x1b[35m"
+#define COLOR_CYAN "\x1b[36m"
+#define COLOR_WHITE "\x1b[37m"
+#define COLOR_NORMAL "\x1b[m"
+
+// background colors
+#define BG_COLOR_BLACK "\x1b[40m"
+#define BG_COLOR_RED "\x1b[41m"
+#define BG_COLOR_GREEN "\x1b[42m"
+#define BG_COLOR_YELLOW "\x1b[43m"
+#define BG_COLOR_BLUE "\x1b[44m"
+#define BG_COLOR_MAGENTA "\x1b[45m"
+#define BG_COLOR_CYAN "\x1b[46m"
+#define BG_COLOR_WHITE "\x1b[47m"
+#define BG_COLOR_NORMAL "\x1b[m"
